@@ -5,10 +5,10 @@ class Solution:
         
         for sell in prices[1:]:
             current_profit = sell - buy
-            if profit < current_profit:
+            if sell < buy:
+                 buy = sell
+            elif profit < current_profit:
                 profit = current_profit
-            elif sell < buy:
-                buy = sell
         return profit
                 
               
