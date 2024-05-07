@@ -3,12 +3,11 @@ class Solution:
         buy = prices[0]
         profit = 0
         
-        for sell in prices[1:]:
-            current_profit = sell - buy
-            if sell < buy:
-                 buy = sell
-            elif profit < current_profit:
-                profit = current_profit
+        for i in range(1,len(prices)):
+            if prices[i] - buy > profit:
+                    profit = prices[i] - buy  
+            elif prices[i] < buy:
+                    buy = prices[i]
         return profit
                 
               
